@@ -22,9 +22,19 @@ componentDidMount(){
     return (
       <div id="app">
         <h1> Im motha fukin Rick yall!!!! </h1>
-        
+        <section id="cards-container">
+          {
+          this.state.selectedCharacters
+          .map( character => (
+            <div className ="card">
+              <img src={character.image}/>
+          <h3>{character.name}</h3>) 
+          </div>
+          ))
+        }
+        </section>
       </div>
-    )
+    );
   }
 }
 
