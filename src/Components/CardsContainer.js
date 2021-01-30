@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 
 export default function CardsContainer( {characters} ){
     return(
@@ -6,10 +7,7 @@ export default function CardsContainer( {characters} ){
         {
             characters
                 .map( character => (
-                <div className ="card">
-                    <img src={character.image}/>
-                <h3>{character.name}</h3>) 
-                </div>
+                <Card character ={character}/>
         ))
         }      
         </section>
