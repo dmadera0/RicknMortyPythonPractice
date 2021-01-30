@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CardsContainer from "./Components/CardsContainer.js"
+import SearchCharacterForm from './Components/SearchCharacterForm'
 import './App.css';
 
 //state compent class componnet//
@@ -23,6 +24,7 @@ componentDidMount(){
     return (
       <div id="app">
         <h1> Im motha fukin Rick yall!!!! </h1>
+        <SearchCharacterForm/>
        <CardsContainer characters={this.state.selectedCharacters}/>
       </div>
     );
