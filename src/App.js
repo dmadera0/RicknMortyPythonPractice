@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import CardsContainer from "./Components/CardsContainer.js"
 import './App.css';
 
 //state compent class componnet//
@@ -22,17 +23,7 @@ componentDidMount(){
     return (
       <div id="app">
         <h1> Im motha fukin Rick yall!!!! </h1>
-        <section id="cards-container">
-          {
-          this.state.selectedCharacters
-          .map( character => (
-            <div className ="card">
-              <img src={character.image}/>
-          <h3>{character.name}</h3>) 
-          </div>
-          ))
-        }
-        </section>
+       <CardsContainer characters={this.state.selectedCharacters}/>
       </div>
     );
   }
