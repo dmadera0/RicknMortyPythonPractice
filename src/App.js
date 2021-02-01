@@ -9,6 +9,7 @@ class App extends Component{
   state = {
     allCharacters:[],
     selectedCharacters:[],
+    newstate: []
   }
 
 componentDidMount(){
