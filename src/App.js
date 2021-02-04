@@ -22,14 +22,16 @@ componentDidMount(){
     })
 }
 
-filterCharacters = ( input ) => {
-  console.log(this)
+filterCharacters = ( event ) => {
+  const filterCharacters = this.state.allCharacters
+    .filter(character => character.name.lovercase)
+  console.log(event.target.value)
 }
   render(){
     return (
       <div id="app">
         <h1> Im motha fukin Rick yall!!!! </h1>
-        <SearchCharacterForm/>
+        <SearchCharacterForm filterCharacters={this.filterCharacters}/>
        <CardsContainer characters={this.state.selectedCharacters}/>
       </div>
     );
