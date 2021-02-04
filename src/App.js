@@ -9,7 +9,7 @@ class App extends Component{
   state = {
     allCharacters:[],
     selectedCharacters:[],
-    newstate: []
+    inputValue:""
   }
 
 componentDidMount(){
@@ -20,6 +20,10 @@ componentDidMount(){
       this.setState({selectedCharacters: data.results})
 
     })
+}
+
+filterCharacters = ( input ) => {
+  console.log(this)
 }
   render(){
     return (
