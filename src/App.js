@@ -22,10 +22,16 @@ componentDidMount(){
     })
 }
 
-filterCharacters = ( event ) => {
+filterCharacters = (event ) => {
+  const input = event.target.value
   const filterCharacters = this.state.allCharacters
-    .filter(character => character.name.lovercase)
-  console.log(event.target.value)
+    .filter(
+      character => (
+        character.name
+        .toLowerCase()
+        .includes(input.toLowerCase())
+      )
+    )
 }
   render(){
     return (
