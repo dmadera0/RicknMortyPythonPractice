@@ -104,6 +104,17 @@ def list_character_traits(name):
     cursor.execute("SELECT * FROM characters WHERE name LIKE ?", ('%' + name + '%',))
     return cursor.fetchall()
 
+def print_all_characters():
+    """
+    Print all characters currently stored in the database.
+    """
+    cursor.execute("SELECT * FROM characters")
+    results = cursor.fetchall()
+
+    for r in results:
+        print(f"ID: {r[0]}, Name: {r[1]}, Status: {r[2]}, Species: {r[3]}, Gender: {r[5]}, Origin: {r[6]}, Location: {r[7]}")
+
+
 
 # === Part 4: CLI Interaction for Learning Purposes === #
 
@@ -114,6 +125,7 @@ def main():
     print("3. Find Similar Characters")
     print("4. List Character Traits")
     print("5. Exit")
+    print("6. Print All Characters")  # New option
 
     while True:
         choice = input("\nEnter a choice: ")
@@ -139,8 +151,11 @@ def main():
         elif choice == '5':
             print("Goodbye!")
             break
+        elif choice == '6':
+            print_all_characters()
         else:
             print("Invalid choice, please try again.")
+
 
 # This block ensures that if the script is run directly, it will start the CLI.
 if __name__ == '__main__':
